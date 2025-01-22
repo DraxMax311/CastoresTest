@@ -1,0 +1,51 @@
+﻿@using CastoresTest.Models.ViewModels
+@{
+    string user = (string)TempData["UsuarioActual"];
+    TempData["UsuarioActual"] = user;
+}
+<table class="table table-bordered table-responsive-xl">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Cantidad</th>
+            <th>Activo</th>
+            <th>Editar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var producto in Model)
+        {
+            <tr>
+                <td>@producto.ID_PRODUCTO</td>
+                <td>@producto.NOMBRE</td>
+                <td>@producto.CANTIDAD</td>
+                @if (producto.ACTIVO)
+                {
+                    <td>&#10003</td>
+                }
+                else
+                {
+                    <td>&#10006</td>
+                }
+                @if (user.Split("-")[2] == "ADMIN")
+                {
+                    <td>
+                        <form action="/AddProducts/EditProductForm" method="get">
+                            <input type="hidden" name="ID_PRODUCTO" value="@producto.ID_PRODUCTO" />
+                            <button type="submit" class="btn btn-primary">Editar</button>
+                        </form>
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        <button type="submit" class="btn btn-primary" disabled>
+                            Editar
+                        </button>
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

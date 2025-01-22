@@ -1,0 +1,32 @@
+﻿<table class="table table-bordered table-responsive-xl" id="TablaMovimientos">
+    <thead>
+        <tr>
+            <th># Movimiento</th>
+            <th>Usuario</th>
+            <th>Producto</th>
+            <th>Movimiento</th>
+            <th>Cantidad</th>
+            <th>Fecha   </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var movimiento in Model)
+        {
+            <tr>
+                <td>@movimiento.ID_MOVIMIENTO</td>
+                <td>@movimiento.ID_USUARIO</td>
+                <td>@movimiento.ID_PRODUCTO</td>
+                @if (movimiento.TIPO_MOVIMIENTO == 1)
+                {
+                    <td>ENTRADA</td>
+                }
+                else
+                {
+                    <td>SALIDA</td>
+                }
+                <td>@movimiento.CANTIDAD</td>
+                <td>@movimiento.FECHA</td>
+            </tr>
+        }
+    </tbody>
+</table>

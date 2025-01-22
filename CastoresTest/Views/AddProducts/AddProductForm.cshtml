@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Nuevo Productos";
+}
+<div class="title-card">
+    Agregar Producto
+</div>
+<form asp-controller="AddProducts" asp-action="AddProduct" method="post">
+    <div class="form-group">
+        <label for="Nombre">Nombre</label>
+        <input type="text" id="Nombre" name="Nombre" class="form-control" required />
+    </div>
+
+        <input type="hidden" id="Cantidad" name="Cantidad" value=0 />
+
+    <input type="hidden" id="Activo" name="Activo" value="true" />
+    <br />
+    <button type="submit" class="btn btn-primary">Agregar Producto</button>
+    <br />
+</form>

@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Actualizar Productos";
+}
+<div class="title-card">
+    Editar Producto
+</div>
+<script src="~/js/UpdateProduct.js"></script>
+<form asp-controller="AddProducts" asp-action="UpdateProduct" method="post">
+    <!-- Hidden field for Product Id -->
+    <input type="hidden" id="ID_PRODUCTO" name="ID_PRODUCTO" value="@Model.ID_PRODUCTO" />
+
+    <div class="form-group">
+        <label for="NOMBRE">Nombre</label>
+        <input type="text" id="NOMBRE" name="NOMBRE" class="form-control" value="@Model.NOMBRE" required />
+    </div>
+
+    <div class="form-group">
+        <label for="CANTIDAD">Cantidad</label>
+        <input type="number" id="CANTIDAD" name="CANTIDAD" class="form-control" value="@Model.CANTIDAD" required onchange="actualizar_valor()" />
+    </div>
+
+    <div class="form-check">
+        <input type="checkbox" id="ACTIVO" name="ACTIVO" class="form-check-input" value="true" @(Model.ACTIVO ? "checked" : "") />
+        <label class="form-check-label" for="ACTIVO">Activo</label>
+    </div>
+
+    <!-- Hidden input for unchecked checkbox -->
+    <input type="hidden" name="ACTIVO" value="false" />
+
+    <button type="submit" class="btn btn-primary">Actualizar Producto</button>
+</form>

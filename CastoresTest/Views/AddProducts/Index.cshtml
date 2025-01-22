@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Alta Productos";
+}
+<div class="title-card">
+    Alta Productos
+</div>
+<div style="display:flex; justify-content:end; padding:10px">
+
+    <form action="/AddProducts/AddProductForm" method="get">
+        <button type="submit" class="btn btn-success" style="width:150px;margin-right:10px;">
+            Nuevo<span class="glyphicon glyphicon-plus-sign"></span>
+        </button>
+    </form>
+</div>
+@Html.Partial("ListadoProductos")

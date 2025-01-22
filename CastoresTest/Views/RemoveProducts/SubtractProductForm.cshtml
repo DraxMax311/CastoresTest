@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Seleccionar cantidad";
+}
+<div class="title-card">
+    Quitar Producto
+</div>
+<script src="~/js/SubstractProduct.js"></script>
+<form asp-controller="RemoveProducts" asp-action="SubstractProducts" method="post">
+    <!-- Hidden field for Product Id -->
+    <input type="hidden" id="ID_PRODUCTO" name="ID_PRODUCTO" value="@Model.ID_PRODUCTO" />
+
+    <input type="hidden" id="NOMBRE" name="NOMBRE" class="form-control" value="@Model.NOMBRE" required />
+
+    <div class="form-group">
+        <label for="CANTIDAD">Cantidad</label>
+        <input type="number" id="CANTIDAD" name="CANTIDAD" class="form-control" value="@Model.CANTIDAD" required onchange="actualizar_valor()" />
+    </div>
+
+    <!-- Hidden input for unchecked checkbox -->
+    <input type="hidden" name="ACTIVO" value="false" />
+
+
+    <button type="submit" class="btn btn-primary">Quitar Existencias</button>
+</form>
