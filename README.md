@@ -13,3 +13,6 @@ Pasos:
     <li>Cambiar el connection string al servidor de la db por la ip de la db a utilizar en el archivo appsettings.Development.json en DefaultConnection</li>
     <li>Presionar F5 en el IDE y esperar a que cargue la pantalla principal.</li>
   </list>
+<a href="https://drive.google.com/file/d/1-iJQ55Rn9whLPSYyTfQM9xCNtv2C7iZ9/view?usp=sharing">Video DEMO</a>
+
+<a href="https://drive.google.com/file/d/1zzqNLO3nznUioK5odgm1Nf9VD1E2zFDF/view?usp=sharing">Video muestra ejecucion en maquina local</a>
